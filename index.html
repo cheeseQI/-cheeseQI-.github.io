@@ -3,95 +3,7 @@
 <head>
 <meta charset="utf-8"> 
 <title>暂时形式</title>  <!--以下css部分包括通用ul的样式和各种布局的样式； -->
-<style> 
-	ul.a {list-style-type:circle;}  
-	a.one:link {color:#ff0000;}
-	a.one:visited {color:#0000ff;}
-	a.one:hover {color:#ffcc00;}    
-	
-	a.two:link {color:#ff0000;}
-	a.two:visited {color:#0000ff;}
-	a.two:hover {font-size:150%;}
-	
-* {
-    box-sizing: border-box;
-}
-body {
-    margin: 0;
-}
-.header {
-    background-color: #d0e4fe;
-    color: white;
-    text-align: center;
-    padding: 15px;
-}
-.footer {
-    background-color: #777;
-    color: white;
-    padding: 15px;
-	text-align:center;
-}
-.topmenu {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #777;
-}
-.topmenu li {
-    float: left;
-}
-.topmenu li a {
-    display: inline-block;
-    color: white;
-    text-align: center;
-    padding: 16px;
-    text-decoration: none;
-}
-.topmenu li a:hover {
-    background-color: #222;
-}
-.topmenu li a.active {
-    color: white;
-    background-color: #4CAF50;
-}
-.column {
-    float: left;
-    padding: 15px;
-}
-.clearfix::after {
-    content: "";
-    clear: both;
-    display: table;
-}
-.sidemenu {
-    width: 25%;
-}
-.content {
-    width: 75%;
-}
-.sidemenu ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-.sidemenu li a {
-    margin-bottom: 10px;
-    display: block;
-    padding: 8px;
-    background-color: #eee;
-    text-decoration: none;
-    color: #666;
-}
-.sidemenu li a:hover {
-    background-color: #555;
-    color: white;
-}
-.sidemenu li a.active {
-    background-color: #008CBA;
-    color: white;
-}
-</style>
+<link rel="stylesheet" href="./static/style.css">
 </head>
 	
 <body>  <!-- 主体 -->
@@ -145,14 +57,8 @@ body {
 		<p>好像没啥东西……</p>
 			
 		<p id="demo">下面这个东西不要点。</p>  <!-- 下面js实现点击 -->
-		<script>   
-		function myFunction()
-	{
-		document.getElementById("demo").innerHTML="嘿嘿，其实没事！";
-	}
-		</script>
+		<script src="static/index.js"></script>
 		<button type="button" onclick="myFunction()">点我</button>
-			
   </div>
 </div>
 
