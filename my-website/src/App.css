@@ -180,3 +180,11 @@ button:hover, a:hover, button:focus, a:focus {
   margin: 20px auto; /* This adds margin on the top and bottom, and auto on the sides to center it */
   object-fit: contain; /* This will ensure the image is scaled to fit and not cropped */
 }
+
+.cat-image {
+  max-width: 50%; /* This will make sure the image is not wider than its container */
+  height: auto; /* This will maintain the aspect ratio */
+  display: block; /* This will prevent inline spacing */
+  margin: 20px auto; /* This adds margin on the top and bottom, and auto on the sides to center it */
+  object-fit: contain; /* This will ensure the image is scaled to fit and not cropped */
+}

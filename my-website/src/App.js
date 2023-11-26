@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
 import langChainImage from './assets/langchain.png'; // Adjust the path and filename as necessary
+import myCatImage from './assets/mycat.jpg';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown, faChevronUp, faPlayCircle  } from '@fortawesome/free-solid-svg-icons';
@@ -34,6 +35,8 @@ function App() {
             <p>
               Software Engineer with a Master's degree, specializing in full-stack development and cloud technologies. Experienced in Java, Python, and JavaScript frameworks with a track record of multiple internships and contributions to open-source projects.
             </p>
+            <img src={myCatImage} alt="mycat" className="cat-image" />
+            <p> Yes, he's my cat. Contact me if you want to see more his cute pictures</p>
           </div>
         </section>
 
