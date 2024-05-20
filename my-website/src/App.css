@@ -4,31 +4,95 @@ body, h1, h2, h3, p {
   font-family: 'Open Sans', sans-serif; 
 }
 
+html, body {
+  height: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  background: linear-gradient(45deg, #f4f4f9, #e8e8f0, #d3d3e0, #f4f4f9);
+  background-size: 400% 400%;
+  animation: gradientBackground 15s ease infinite;
+}
+
+@keyframes gradientBackground {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 .App {
   text-align: center;
   color: #333;
-  max-width: 800px;
-  margin: auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .App-header {
-  background-color: #007bff; 
+  background: linear-gradient(135deg, #667eea, #764ba2);
   color: white;
   padding: 40px 0;
   font-size: 2em;
   border-bottom: 5px solid #0056b3; 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  transition: all 0.3s ease;
 }
 
+.App-header h1 {
+  font-size: 2.5em;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.App-header:hover h1 {
+  transform: scale(1.1);
+}
+
+.navbar {
+  background-color: #007bff;
+  padding: 10px 20px;
+  color: white;
+  text-align: center;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar a {
+  color: white;
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.navbar a:hover {
+  color: #ffd700;
+  transform: scale(1.1);
+}
 
 main {
+  flex: 1;
   padding: 20px;
 }
 
 section {
   margin-bottom: 40px;
+  width: 100%;
 }
 
-/* title */
 h1 {
   color: #333;
   margin-bottom: 0.5em;
@@ -41,8 +105,8 @@ h2 {
   cursor: pointer;
   position: relative;
   display: inline-block;
+  transition: color 0.3s ease;
 }
-
 
 h2:hover {
   color: #0056b3; 
@@ -51,9 +115,10 @@ h2:hover {
 .project-details {
   margin-bottom: 15px;
   padding: 10px;
-  background-color: #f8f9fa; /* light grey background */
-  border-left: 3px solid #007bff; /* blue left border */
+  background-color: #f8f9fa; 
+  border-left: 3px solid #007bff; 
   transition: all 0.3s ease;
+  border-radius: 5px;
 }
 
 .project-details h3 {
@@ -65,30 +130,27 @@ h2:hover {
 }
 
 .project-details:hover {
-  background-color: #e9ecef; /* slightly darker grey on hover */
+  background-color: #e9ecef; 
 }
 
 .content {
-  max-height: 0;
   overflow: hidden;
   transition: max-height 0.3s ease;
 }
 
 .content.show {
-  max-height: 1000px; 
+  max-height: none;
 }
 
 .FontAwesomeIcon {
   margin-left: 10px;
 }
 
-/* text */
 p {
   color: #555;
   line-height: 1.6;
 }
 
-/* url */
 a {
   color: #007bff;
   text-decoration: none;
@@ -100,26 +162,26 @@ a:hover {
 }
 
 ul {
-  list-style-type: none; /* Removes default list styling */
+  list-style-type: none; 
   padding-left: 0;
   text-align: left;
 }
 
 ul li {
-  margin-bottom: 10px; /* Adds space between list items */
+  margin-bottom: 10px; 
 }
 
 ul li::before {
-  content: '• '; /* Adds a custom bullet point */
-  color: #007bff; /* Example color for the bullet point */
-  font-weight: bold; /* Makes the bullet point bold */
+  content: '• '; 
+  color: #007bff; 
+  font-weight: bold; 
   display: inline-block; 
-  width: 1em; /* Width of the bullet point */
-  margin-left: -1em; /* Aligns the bullet point outside the text alignment */
+  width: 1em; 
+  margin-left: -1em; 
 }
 
 ul li strong {
-  color: #007bff; /* Bootstrap primary color for emphasis */
+  color: #007bff; 
 }
 
 .btn-primary {
@@ -137,20 +199,17 @@ ul li strong {
   background-color: #0056b3;
 }
 
-
 button:hover, a:hover, button:focus, a:focus {
   opacity: 0.8;
 }
 
-/* ... existing styles */
-
 .video-thumbnail {
   display: block;
-  width: 100%; /* or the width you want */
-  padding-top: 56.25%; /* 16:9 Aspect Ratio */
-  position: relative; /* for absolute positioning the icon */
+  width: 100%; 
+  padding-top: 56.25%; 
+  position: relative; 
   border: none;
-  text-decoration: none; /* No underline */
+  text-decoration: none; 
 }
 
 .video-thumbnail-image {
@@ -168,23 +227,22 @@ button:hover, a:hover, button:focus, a:focus {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 3em; /* Icon size */
-  color: white; /* Icon color */
+  font-size: 3em; 
+  color: white; 
 }
 
-/* ... other styles */
 .langchain-image {
-  max-width: 100%; /* This will make sure the image is not wider than its container */
-  height: auto; /* This will maintain the aspect ratio */
-  display: block; /* This will prevent inline spacing */
-  margin: 20px auto; /* This adds margin on the top and bottom, and auto on the sides to center it */
-  object-fit: contain; /* This will ensure the image is scaled to fit and not cropped */
+  max-width: 100%; 
+  height: auto; 
+  display: block; 
+  margin: 20px auto; 
+  object-fit: contain; 
 }
 
 .cat-image {
-  max-width: 50%; /* This will make sure the image is not wider than its container */
-  height: auto; /* This will maintain the aspect ratio */
-  display: block; /* This will prevent inline spacing */
-  margin: 20px auto; /* This adds margin on the top and bottom, and auto on the sides to center it */
-  object-fit: contain; /* This will ensure the image is scaled to fit and not cropped */
+  max-width: 100%; 
+  height: auto; 
+  display: block; 
+  margin: 20px auto; 
+  object-fit: contain; 
 }
